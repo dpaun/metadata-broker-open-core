@@ -1,11 +1,8 @@
-name: Post welcome comment
-on:
-  pull_request:
-    types: [opened]
-  workflow_dispatch:
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
-  build:
-    name: Post welcome comment
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
