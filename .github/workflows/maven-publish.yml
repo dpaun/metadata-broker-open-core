@@ -50,7 +50,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: metadata1-broker-open-core_${{ steps.get-revision-number.outputs.info }}
+        name: metadata-broker-open-core_${{ steps.get-revision-number.outputs.info }}
         #path: staging
         path: ${{ github.workspace }}/broker-core/target
         
