@@ -52,7 +52,7 @@ jobs:
       with:
         name: metadata1-broker-open-core_${{ steps.get-revision-number.outputs.info }}
         #path: staging
-        path: ${{ github.workspace }}/target
+        path: ${{ github.workspace }}/broker-core/target
         
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
