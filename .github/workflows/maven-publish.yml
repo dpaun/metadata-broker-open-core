@@ -37,14 +37,16 @@ jobs:
 #     run: mvn -B package --file pom.xml
       run: mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
 
+    - name: Upload artifact
+    - run: mvn --batch-mode --update-snapshots verify
+    - run: mkdir staging && cp target/*.jar staging
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Package
+        path: staging
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
 #      env:
 #        GITHUB_TOKEN: ${{ github.token }}
         
-#     - run: mvn --batch-mode --update-snapshots verify
-#     - run: mkdir staging && cp target/*.jar staging
-#     - uses: actions/upload-artifact@v3
-#       with:
-#         name: Package
-#         path: staging
+
