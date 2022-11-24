@@ -35,9 +35,9 @@ jobs:
     
     - name: Build with Maven
 #     run: mvn -B package --file pom.xml
-      run: |
-        mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
-        mkdir staging && cp /home/runner/work/metadata-broker-open-core/metadata-broker-open-core/broker-core/target/*.jar staging
+      #run: |
+      run: mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
+        #mkdir staging && cp /home/runner/work/metadata-broker-open-core/metadata-broker-open-core/broker-core/target/*.jar staging
 #     - run: mvn --batch-mode --update-snapshots verify
 
     - name: Set up a cache for Maven
@@ -50,8 +50,9 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: metadata-broker-open-core_${{ steps.get-revision-number.outputs.info }}
-        path: staging
+        name: metadata1-broker-open-core_${{ steps.get-revision-number.outputs.info }}
+        #path: staging
+        path: ${{ github.workspace }}/target
         
 #    - name: Publish to GitHub Packages Apache Maven
 #      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
