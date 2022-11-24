@@ -50,7 +50,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: github-actions-artifact
+        name: metadata-broker-open-core_${{ steps.get-revision-number.outputs.info }}
         path: staging
         
 #    - name: Publish to GitHub Packages Apache Maven
