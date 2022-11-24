@@ -37,7 +37,7 @@ jobs:
 #     run: mvn -B package --file pom.xml
       run: |
         mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
-        mkdir staging && cp target/*.jar staging
+        mkdir staging && cp /home/runner/work/metadata-broker-open-core/metadata-broker-open-core/broker-core/target/*.jar staging
 #     - run: mvn --batch-mode --update-snapshots verify
 
     - name: Set up a cache for Maven
