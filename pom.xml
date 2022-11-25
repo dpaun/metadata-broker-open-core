@@ -157,7 +157,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/cvitaa11/java-spring-demo</url>
+            <url>https://maven.pkg.github.com/dpaun/metadata-broker-open-core</url>
         </repository>
     </distributionManagement>
 </project>
