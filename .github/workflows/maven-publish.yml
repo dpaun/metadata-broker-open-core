@@ -61,6 +61,12 @@ jobs:
           distribution: 'temurin'
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
+      - name: Get revision number from pom.xml
+        id: get-revision-number
+        uses: mavrosxristoforos/get-xml-info@1.0
+        with:
+          xml-file: 'pom.xml'
+          xpath: '//*[local-name()="revision"]'
       - run: mvn -B package --file pom.xml -DskipTests
       - name: Upload artifact
         uses: actions/upload-artifact@v3
