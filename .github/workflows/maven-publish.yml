@@ -57,9 +57,7 @@ jobs:
         #path: staging
         path: ${{ github.workspace }}/broker-core/target
         
-        
-        
-        #this should work
+#this should work
 #     - name: Publish to GitHub Packages Apache Maven
 #       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
 #       env:
