@@ -47,7 +47,19 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: metadata-broker-open-core_${{ steps.get-revision-number.outputs.info }}
+        name: metadata-broker-open-core_open-index-common_${{ steps.get-revision-number.outputs.info }}
+        path: ${{ github.workspace }}/open-index-common/target
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: metadata-broker-open-core_open-broker-common_${{ steps.get-revision-number.outputs.info }}
+        path: ${{ github.workspace }}/open-broker-common/target
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: metadata-broker-open-core_broker-core_broker-core_${{ steps.get-revision-number.outputs.info }}
         path: ${{ github.workspace }}/broker-core/target
         
     - name: Publish to GitHub Packages Apache Maven
