@@ -62,13 +62,13 @@ jobs:
         name: metadata-broker-open-core_broker-core_${{ steps.get-revision-number.outputs.info }}
         path: ${{ github.workspace }}/broker-core/target
         
-    - name: Delete Release
-      uses: WyriHaximus/github-action-delete-package@master
-      if: steps.get-revision-number.outputs.info != ''
-      with:
-        packageVersionId: ${{ steps.get-revision-number.outputs.info }}
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+    #- name: Delete Release
+    #  uses: WyriHaximus/github-action-delete-package@master
+    #  if: steps.get-revision-number.outputs.info != ''
+    #  with:
+    #    packageVersionId: ${{ steps.get-revision-number.outputs.info }}
+    #  env:
+    #    GITHUB_TOKEN: ${{ github.token }}
       
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
