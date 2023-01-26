@@ -40,7 +40,7 @@ jobs:
         servers: |
           [{
               "id": "github-IDS-Components",
-              "username": "${{ secrets.USER_PACKAGE_READ }}",
+              "username": "${{ secrets.USER_PACKAGE_READ1 }}",
               "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
           }]
           
