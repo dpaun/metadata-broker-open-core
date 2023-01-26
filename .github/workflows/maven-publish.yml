@@ -35,7 +35,7 @@ jobs:
         xpath: '//*[local-name()="revision"]'
         
     - name: Setup Maven
-    - uses: s4u/maven-settings-action@v2.3.0
+      uses: s4u/maven-settings-action@v2.3.0
       with:
         servers: |
           [{
