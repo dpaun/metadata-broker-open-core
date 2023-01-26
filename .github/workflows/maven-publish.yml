@@ -40,8 +40,8 @@ jobs:
         servers: |
           [{
               "id": "github-IDS-Components",
-              "username": "dpaun",
-              "password": "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"
+              "username": "${{ secrets.USER_PACKAGE_READ }}",
+              "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
           }]
           
     - name: Build with Maven
