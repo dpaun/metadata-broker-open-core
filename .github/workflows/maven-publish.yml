@@ -33,7 +33,17 @@ jobs:
       with:
         xml-file: 'pom.xml'
         xpath: '//*[local-name()="revision"]'
-      
+        
+    - name: Setup Maven
+    - uses: s4u/maven-settings-action@v2.3.0
+      with:
+        servers: |
+          [{
+              "id": "github-IDS-Components",
+              "username": "dpaun",
+              "password": "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"
+          }]
+          
     - name: Build with Maven
       run: mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
 
