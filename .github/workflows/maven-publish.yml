@@ -79,7 +79,15 @@ jobs:
     #    packageVersionId: ${{ steps.get-revision-number.outputs.info }}
     #  env:
     #    GITHUB_TOKEN: ${{ github.token }}
-        
+    - name: Setup Maven
+      uses: s4u/maven-settings-action@v2.3.0
+      with:
+        servers: |
+          [{
+            "id": "github-IDS-Components",
+            "username": "${{ secrets.USER_PACKAGE_READ }}",
+            "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
+          }]
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
