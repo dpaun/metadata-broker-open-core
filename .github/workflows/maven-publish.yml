@@ -39,20 +39,24 @@ jobs:
       with:
         servers: |
           [{
-              "id": "github-IDS-Components",
-              "username": "${{ secrets.USER_PACKAGE_READ }}",
-              "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
-          },
-          {
-              "id": "github-IDS-Serializer",
-              "username": "${{ secrets.USER_PACKAGE_READ }}",
-              "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
-          },
-          {
-              "id": "github-IDS-Meta-data-broker-extensions",
-              "username": "${{ secrets.USER_PACKAGE_READ }}",
-              "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
+            "id": "github-IDS-Components",
+            "username": "${{ secrets.USER_PACKAGE_READ }}",
+            "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
           }]
+        #   "id": "github-IDS-Components",
+        #   "username": "${{ secrets.USER_PACKAGE_READ }}",
+        #    "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
+        #  },
+        #  {
+        #      "id": "github-IDS-Serializer",
+        #      "username": "${{ secrets.USER_PACKAGE_READ }}",
+        #      "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
+          # },
+          # {
+              # "id": "github-IDS-Meta-data-broker-extensions",
+              # "username": "${{ secrets.USER_PACKAGE_READ }}",
+              # "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
+        #  }]
           
     - name: Build with Maven
       run: mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
