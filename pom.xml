@@ -72,7 +72,7 @@
             </snapshots>
             <id>eis-snapshot-repo</id>
             <url>http://maven.iais.fraunhofer.de/artifactory/eis-ids-public</url>
-        </repository>-->
+        </repository>
     </repositories>
 
     <build>
