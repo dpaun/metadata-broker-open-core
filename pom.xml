@@ -47,11 +47,7 @@
             <name>GitHub Packages IDS-Components</name>
             <url>https://maven.pkg.github.com/dpaun/IDS-Components</url>
         </repository>
-        <repository>
-            <id>github-IDS-Serializer</id>
-            <name>GitHub Packages IDS-Serializer</name>
-            <url>https://maven.pkg.github.com/dpaun/IDS-Serializer</url>
-        </repository>
+
         <!--<repository>
             <id>eis-public-repo</id>
             <name>maven-public</name>
