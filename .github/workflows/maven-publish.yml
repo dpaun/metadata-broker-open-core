@@ -34,61 +34,11 @@ jobs:
         xml-file: 'pom.xml'
         xpath: '//*[local-name()="revision"]'
         
-    - name: Setup Maven
-      uses: s4u/maven-settings-action@v2.3.0
-      with:
-        servers: |
-          [{
-            "id": "github-IDS-Components",
-            "username": "${{ secrets.USER_PACKAGE_READ }}",
-            "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
-          }]
           
     - name: Build with Maven
       run: mvn clean package -U -Drevision=${{ steps.get-revision-number.outputs.info }}
 
-    - name: Set up a cache for Maven
-      uses: actions/cache@v2
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-        restore-keys: ${{ runner.os }}-m2
-
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: metadata-broker-open-core_open-index-common_${{ steps.get-revision-number.outputs.info }}
-        path: ${{ github.workspace }}/open-index-common/target
-        
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: metadata-broker-open-core_open-broker-common_${{ steps.get-revision-number.outputs.info }}
-        path: ${{ github.workspace }}/open-broker-common/target
-        
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: metadata-broker-open-core_broker-core_${{ steps.get-revision-number.outputs.info }}
-        path: ${{ github.workspace }}/broker-core/target
-        
-    #- name: Delete Release
-    #  uses: WyriHaximus/github-action-delete-package@master
-    #  if: steps.get-revision-number.outputs.info != ''
-    #  with:
-    #    packageVersionId: ${{ steps.get-revision-number.outputs.info }}
-    #  env:
-    #    GITHUB_TOKEN: ${{ github.token }}
-    - name: Setup Maven
-      uses: s4u/maven-settings-action@v2.3.0
-      with:
-        servers: |
-          [{
-            "id": "github-IDS-Components",
-            "username": "${{ secrets.USER_PACKAGE_READ }}",
-            "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
-          }]
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Drevision=${{ steps.get-revision-number.outputs.info }}
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
