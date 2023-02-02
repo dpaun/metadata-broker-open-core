@@ -52,11 +52,6 @@
             <name>GitHub Packages IDS-Serializer</name>
             <url>https://maven.pkg.github.com/dpaun/IDS-Serializer</url>
         </repository>
-        <repository>
-            <id>github-IDS-Meta-data-broker-extensions</id>
-            <name>GitHub Packages IDS-Meta-data-broker-extensions</name>
-            <url>https://maven.pkg.github.com/dpaun/IDS-Meta-data-broker-extensions</url>
-        </repository>
         <!--<repository>
             <id>eis-public-repo</id>
             <name>maven-public</name>
