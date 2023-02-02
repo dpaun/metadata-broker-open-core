@@ -37,7 +37,7 @@
     </reporting>
 
     <repositories>
-        <repository>
+        <!--<repository>
             <id>github-java-representation-of-ids-information-model</id>
             <name>GitHub Java-Representation-of-IDS-Information-Model </name>
             <url>https://github.com/dpaun/Java-Representation-of-IDS-Information-Model/raw/main</url>
@@ -46,9 +46,9 @@
             <id>github-IDS-Components</id>
             <name>GitHub Packages IDS-Components</name>
             <url>https://maven.pkg.github.com/dpaun/IDS-Components</url>
-        </repository>
+        </repository>-->
 
-        <!--<repository>
+        <repository>
             <id>eis-public-repo</id>
             <name>maven-public</name>
             <url>https://maven.iais.fraunhofer.de/artifactory/eis-ids-public</url>
