@@ -89,6 +89,6 @@ jobs:
             "password": "${{ secrets.TOKEN_PACKAGE_READ }}"
           }]
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -Drevision=${{ steps.get-revision-number.outputs.info }}
       env:
         GITHUB_TOKEN: ${{ github.token }}
