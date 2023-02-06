@@ -20,7 +20,7 @@ jobs:
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-broker-common'
         package-type: 'maven'
-        ignore-versions: '5.0.4, 5.0.3'
+        ignore-versions: '5.0.4'
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
@@ -30,6 +30,7 @@ jobs:
         package-type: 'maven'
         ignore-versions: '5.0.4'
         token: ${{ github.token }}
+      continue-on-error: true
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       with: 
@@ -37,6 +38,7 @@ jobs:
         package-type: 'maven'
         ignore-versions: '5.0.4'
         token: ${{ github.token }}
+      continue-on-error: true
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       with: 
@@ -44,6 +46,7 @@ jobs:
         package-type: 'maven'
         ignore-versions: '5.0.4'
         token: ${{ github.token }}
+      continue-on-error: true
     #  uses: WyriHaximus/github-action-delete-package@master
     #  if: steps.get-revision-number.outputs.info != ''
     #  with:
