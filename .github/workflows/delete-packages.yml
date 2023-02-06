@@ -18,6 +18,12 @@ jobs:
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       with: 
+        package-name: 'de.fraunhofer.iais.eis.ids.open-broker-common'
+        package-type: 'maven'
+        token: ${{ github.token }}
+    - name: Delete Release
+      uses: actions/delete-package-versions@v4
+      with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-index-common'
         package-type: 'maven'
         token: ${{ github.token }}
