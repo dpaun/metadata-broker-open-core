@@ -20,28 +20,24 @@ jobs:
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-broker-common'
         package-type: 'maven'
-        ignore-versions: '5.0.3'
         token: ${{ github.token }}
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-index-common'
         package-type: 'maven'
-        ignore-versions: '5.0.3'
         token: ${{ github.token }}
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.broker-open-core'
         package-type: 'maven'
-        ignore-versions: '5.0.3'
         token: ${{ github.token }}
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.broker-core'
         package-type: 'maven'
-        ignore-versions: '5.0.3'
         token: ${{ github.token }}
     #  uses: WyriHaximus/github-action-delete-package@master
     #  if: steps.get-revision-number.outputs.info != ''
