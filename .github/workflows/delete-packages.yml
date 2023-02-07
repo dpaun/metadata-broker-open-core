@@ -19,7 +19,7 @@ jobs:
       uses: castlabs/get-package-version-id-action@v2.0
       id: versions
       with:
-        versions: "5.0.6"
+        version: '5.0.6'
     - name: Delete Release
       uses: actions/delete-package-versions@v4
       if: ${{ steps.versions.outputs.ids != '' }}
