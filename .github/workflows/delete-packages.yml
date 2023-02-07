@@ -15,36 +15,45 @@ jobs:
       packages: write
 
     steps:
+    - name: Get version id
+      uses: castlabs/get-package-version-id-action@v2.0
+      id: versions
+      with:
+        versions: "5.0.6"
     - name: Delete Release
       uses: actions/delete-package-versions@v4
+      if: ${{ steps.versions.outputs.ids != '' }}
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-broker-common'
         package-type: 'maven'
-        ignore-versions: '5.0.4'
+        package-version-ids: "${{ steps.versions.outputs.ids }}"
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
       uses: actions/delete-package-versions@v4
+      if: ${{ steps.versions.outputs.ids != '' }}
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-index-common'
         package-type: 'maven'
-        ignore-versions: '5.0.4'
+        package-version-ids: "${{ steps.versions.outputs.ids }}"
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
       uses: actions/delete-package-versions@v4
+      if: ${{ steps.versions.outputs.ids != '' }}
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.broker-open-core'
         package-type: 'maven'
-        ignore-versions: '5.0.4'
+        package-version-ids: "${{ steps.versions.outputs.ids }}"
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
       uses: actions/delete-package-versions@v4
+      if: ${{ steps.versions.outputs.ids != '' }}
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.broker-core'
         package-type: 'maven'
-        ignore-versions: '5.0.4'
+        package-version-ids: "${{ steps.versions.outputs.ids }}"
         token: ${{ github.token }}
       continue-on-error: true
     #  uses: WyriHaximus/github-action-delete-package@master
