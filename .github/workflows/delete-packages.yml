@@ -26,7 +26,7 @@ jobs:
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-broker-common'
         package-type: 'maven'
-        package-version-ids: ${{ steps.versions.outputs.ids }}
+        package-version-ids: '${{ steps.versions.outputs.ids }}'
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
@@ -35,7 +35,7 @@ jobs:
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.open-index-common'
         package-type: 'maven'
-        package-version-ids: ${{ steps.versions.outputs.ids }}
+        package-version-ids: '${{ steps.versions.outputs.ids }}'
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
@@ -44,7 +44,7 @@ jobs:
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.broker-open-core'
         package-type: 'maven'
-        package-version-ids: ${{ steps.versions.outputs.ids }}
+        package-version-ids: '${{ steps.versions.outputs.ids }}'
         token: ${{ github.token }}
       continue-on-error: true
     - name: Delete Release
@@ -53,7 +53,7 @@ jobs:
       with: 
         package-name: 'de.fraunhofer.iais.eis.ids.broker-core'
         package-type: 'maven'
-        package-version-ids: ${{ steps.versions.outputs.ids }}
+        package-version-ids: '${{ steps.versions.outputs.ids }}'
         token: ${{ github.token }}
       continue-on-error: true
     #  uses: WyriHaximus/github-action-delete-package@master
